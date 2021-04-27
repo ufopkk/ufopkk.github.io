@@ -6,7 +6,7 @@
   <link href="http://ufopkk.github.io/atom.xml" rel="self"/>
   
   <link href="http://ufopkk.github.io/"/>
-  <updated>2021-04-27T08:47:04.485Z</updated>
+  <updated>2021-04-27T09:56:44.291Z</updated>
   <id>http://ufopkk.github.io/</id>
   
   <author>
@@ -17,16 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于hexo和github搭建个人博客</title>
-    <link href="http://ufopkk.github.io/2021/04/27/%E5%9F%BA%E4%BA%8Ehexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://ufopkk.github.io/2021/04/27/%E5%9F%BA%E4%BA%8Ehexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
-    <published>2021-04-27T03:26:58.000Z</published>
-    <updated>2021-04-27T08:47:04.485Z</updated>
+    <title>基于hexo和github搭建博客</title>
+    <link href="http://ufopkk.github.io/2021/04/27/%E5%9F%BA%E4%BA%8Ehexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://ufopkk.github.io/2021/04/27/%E5%9F%BA%E4%BA%8Ehexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
+    <published>2021-04-27T09:54:52.000Z</published>
+    <updated>2021-04-27T09:56:44.291Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy  hexo -d </span><br></pre></td></tr></tbody></table></figure><h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><ol><li>安装next主题，以npm方式进行安装<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-theme-next@latest</span><br></pre></td></tr></tbody></table></figure></li><li>修改主题<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\_config.yml</span><br><span class="line">theme: next      <span class="comment">#启用next主题</span></span><br><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure></li><li>更换样式<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\node_modules\hexo-theme-next\_config.yml</span><br><span class="line">对next模板的默认Muse进行修改</span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></tbody></table></figure><h2 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h2>本站中使用了<a href="https://github.com/tomotoes/hexo-theme-tomotoes/">tomotoes主题</a>  更多主题可参考 <a href="https://hexo.io/themes/">https://hexo.io/themes/</a><h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><a href="https://my.oschina.net/zhengqingya/blog/3070979">https://my.oschina.net/zhengqingya/blog/3070979</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy  hexo -d </span><br></pre></td></tr></tbody></table></figure>]]></content>
     
     
-    <summary type="html">如何基于hexo和github搭建个人博客？</summary>
+      
+      
+    <summary type="html">&lt;h1 id=&quot;hexo常用命令&quot;&gt;&lt;a href=&quot;#hexo常用命令&quot; class=&quot;headerlink&quot; title=&quot;hexo常用命令&quot;&gt;&lt;/a&gt;hexo常用命令&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>论文画图</title>
+    <link href="http://ufopkk.github.io/2021/04/27/%E8%AE%BA%E6%96%87%E7%94%BB%E5%9B%BE/"/>
+    <id>http://ufopkk.github.io/2021/04/27/%E8%AE%BA%E6%96%87%E7%94%BB%E5%9B%BE/</id>
+    <published>2021-04-27T09:46:08.000Z</published>
+    <updated>2021-04-27T09:49:09.130Z</updated>
+    
     
     
     
