@@ -6,11 +6,11 @@
   <link href="http://ufopkk.github.io/atom.xml" rel="self"/>
   
   <link href="http://ufopkk.github.io/"/>
-  <updated>2021-04-27T09:56:44.291Z</updated>
+  <updated>2021-04-28T02:19:20.971Z</updated>
   <id>http://ufopkk.github.io/</id>
   
   <author>
-    <name>Wang Bingfa</name>
+    <name>看秋天的你</name>
     
   </author>
   
@@ -18,17 +18,17 @@
   
   <entry>
     <title>基于hexo和github搭建博客</title>
-    <link href="http://ufopkk.github.io/2021/04/27/%E5%9F%BA%E4%BA%8Ehexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://ufopkk.github.io/2021/04/27/%E5%9F%BA%E4%BA%8Ehexo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
+    <link href="http://ufopkk.github.io/posts/38872/"/>
+    <id>http://ufopkk.github.io/posts/38872/</id>
     <published>2021-04-27T09:54:52.000Z</published>
-    <updated>2021-04-27T09:56:44.291Z</updated>
+    <updated>2021-04-28T02:19:20.971Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy  hexo -d </span><br></pre></td></tr></tbody></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy  hexo -d </span><br></pre></td></tr></tbody></table></figure><h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ol><li>安装next主题，以npm方式进行安装<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-theme-next@latest</span><br></pre></td></tr></tbody></table></figure></li><li>修改主题<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\_config.yml</span><br><span class="line">theme: next      <span class="comment">#启用next主题</span></span><br><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure></li><li>更换样式<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\node_modules\hexo-theme-next\_config.yml</span><br><span class="line">对next模板的默认Muse进行修改</span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></tbody></table></figure><h2 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h2>本站中使用了<a href="https://github.com/tomotoes/hexo-theme-tomotoes/">tomotoes主题</a>  更多主题可参考 <a href="https://hexo.io/themes/">https://hexo.io/themes/</a></li></ol><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/.io//question2.png" alt title>                </div>                <div class="image-caption"></div>            </figure><ol><li>在<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span></span><br><span class="line">npm install lodash                      <span class="comment">#在项目根目录下安装lodash组件</span></span><br></pre></td></tr></tbody></table></figure><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\node_modules\hexo\package.json </span><br><span class="line">vim package.json</span><br><span class="line">添加 <span class="string">"lodash"</span>: <span class="string">"4.17.21"</span></span><br></pre></td></tr></tbody></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/.io//config1.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="variable">${project_root}</span>\node_modules\hexo\lib\hexo\index.js </span><br><span class="line">添加 const _ = require(<span class="string">"lodash"</span>); 和this._ = _;</span><br></pre></td></tr></tbody></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/.io//config2.png" alt title>                </div>                <div class="image-caption"></div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/.io//config3.png" alt title>                </div>                <div class="image-caption"></div>            </figure><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><a href="https://my.oschina.net/zhengqingya/blog/3070979">https://my.oschina.net/zhengqingya/blog/3070979</a></li></ol>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;hexo常用命令&quot;&gt;&lt;a href=&quot;#hexo常用命令&quot; class=&quot;headerlink&quot; title=&quot;hexo常用命令&quot;&gt;&lt;/a&gt;hexo常用命令&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;command&quot;&gt;&lt;a href=&quot;#command&quot; class=&quot;headerlink&quot; title=&quot;command&quot;&gt;&lt;/a&gt;command&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td </summary>
       
     
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>论文画图</title>
-    <link href="http://ufopkk.github.io/2021/04/27/%E8%AE%BA%E6%96%87%E7%94%BB%E5%9B%BE/"/>
-    <id>http://ufopkk.github.io/2021/04/27/%E8%AE%BA%E6%96%87%E7%94%BB%E5%9B%BE/</id>
+    <link href="http://ufopkk.github.io/posts/36630/"/>
+    <id>http://ufopkk.github.io/posts/36630/</id>
     <published>2021-04-27T09:46:08.000Z</published>
     <updated>2021-04-27T09:49:09.130Z</updated>
     
@@ -51,8 +51,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://ufopkk.github.io/2021/04/27/hello-world/"/>
-    <id>http://ufopkk.github.io/2021/04/27/hello-world/</id>
+    <link href="http://ufopkk.github.io/posts/16107/"/>
+    <id>http://ufopkk.github.io/posts/16107/</id>
     <published>2021-04-27T01:43:52.648Z</published>
     <updated>2021-04-27T08:47:04.482Z</updated>
     
