@@ -1,0 +1,5 @@
+[0428/165424:INFO:http_cache_transaction.cc(72)] IgnoreZeroCacheError: 0
+[0428/165430:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0428/165433:WARNING:spdy_session.cc(2571)] Received RST for invalid stream17
+[0428/165433:WARNING:spdy_session.cc(2571)] Received RST for invalid stream19
+[0428/170439:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
