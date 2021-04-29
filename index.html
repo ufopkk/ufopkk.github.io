@@ -215,25 +215,37 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h2 id="command"><a href="#command" class="headerlink" title="command"></a>command</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy  hexo -d </span><br></pre></td></tr></tbody></table></figure>
-
+        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li><p>hexo init<br><code>hexo init</code>用于初始化本地文件夹为网站的根目录</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init [folder]</span><br><span class="line">hexo deploy  hexo -d </span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>hexo new<br><code>hexo new</code>用于新建文章</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br><span class="line">layout 可选参数，用以指定文章类型，若无指定则默认由配置文件中的 default_layout 选项决定</span><br><span class="line">title 必填参数，用以指定文章标题，如果参数值中含有空格，则需要使用双引号包围</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>hexo server<br><code>hexo server / hexo s</code>用于启动本地服务器</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo server [-p] [-i] [-s]</span><br><span class="line">-p 选项，指定服务器端口，默认为 4000</span><br><span class="line">-i 选项，指定服务器 IP 地址，默认为 0.0.0.0</span><br><span class="line">-s 选项，静态模式 ，仅提供 public 文件夹中的文件并禁用文件监视</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>hexo generate<br><code>hexo generate / hexo g</code>用于生成静态网页</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g --watch                   <span class="comment">#监视文件变动</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>hexo deploy<br><code>hexo deploy / hexo d</code>用于部署到远程服务器</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate --deploy</span><br><span class="line">hexo deploy --generate</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
 <h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ol>
 <li>安装next主题，以npm方式进行安装<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-theme-next@latest</span><br></pre></td></tr></tbody></table></figure></li>
 <li>修改主题<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\_config.yml</span><br><span class="line">theme: next      <span class="comment">#启用next主题</span></span><br><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure></li>
-<li>更换样式<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\node_modules\hexo-theme-next\_config.yml</span><br><span class="line">对next模板的默认Muse进行修改</span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h2>本站中使用了<a target="_blank" rel="noopener" href="https://github.com/tomotoes/hexo-theme-tomotoes/">tomotoes主题</a>  更多主题可参考 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></li>
+<li>更换样式<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\node_modules\hexo-theme-next\_config.yml</span><br><span class="line">对next模板的默认Muse进行修改</span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></tbody></table></figure></li>
 </ol>
-<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><img src="/posts/38872/38872/config1.png" class="">
-<figure class="image-bubble">
+<h2 id="如何在文章中插入图片"><a href="#如何在文章中插入图片" class="headerlink" title="如何在文章中插入图片"></a>如何在文章中插入图片</h2><ol>
+<li>修改站点配置文件<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span></span><br><span class="line">vim <span class="variable">${project_root}</span>\_config.yml</span><br><span class="line">post_asset_folder: <span class="literal">true</span>             <span class="comment">#将此项设置为true</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li>安装插件<br>npm install <a target="_blank" rel="noopener" href="https://github.com/CodeFalling/hexo-asset-image">https://github.com/CodeFalling/hexo-asset-image</a> – save</li>
+<li>插入图片<br>运行hexo n “xxxx”来生成md博文时，/source/_posts文件夹内除了xxxx.md文件还有一个同名的文件夹 最后在xxxx.md中想引入图片时，先把图片复制到xxxx这个文件夹中，然后只需要在xxxx.md中按照markdown的格式引入图片<br>插入格式为 <code>![图片描述](xxxx/图片名.jpg)</code></li>
+</ol>
+<h2 id="自定义主题"><a href="#自定义主题" class="headerlink" title="自定义主题"></a>自定义主题</h2><p>本站中使用了<a target="_blank" rel="noopener" href="https://github.com/tomotoes/hexo-theme-tomotoes/">tomotoes主题</a>  更多主题可参考 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/posts/38872/question2.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<ol>
-<li>在<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span></span><br><span class="line">npm install lodash                      <span class="comment">#在项目根目录下安装lodash组件</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">${project_root}</span>\node_modules\hexo\package.json </span><br><span class="line">vim package.json</span><br><span class="line">添加 <span class="string">"lodash"</span>: <span class="string">"4.17.21"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```bash</span><br><span class="line">cd ${project_root}</span><br><span class="line">npm install lodash                      #在项目根目录下安装lodash组件</span><br><span class="line">cd ${project_root}\node_modules\hexo\package.json </span><br><span class="line">vim package.json</span><br><span class="line">添加 "lodash": "4.17.21"</span><br></pre></td></tr></tbody></table></figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -256,8 +268,7 @@
                 </div>
                 <div class="image-caption"></div>
             </figure>
-<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><a target="_blank" rel="noopener" href="https://my.oschina.net/zhengqingya/blog/3070979">https://my.oschina.net/zhengqingya/blog/3070979</a></li>
-</ol>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p><a target="_blank" rel="noopener" href="https://my.oschina.net/zhengqingya/blog/3070979">https://my.oschina.net/zhengqingya/blog/3070979</a></p>
 
     
         <div class="post-more-div">
