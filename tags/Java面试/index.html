@@ -6,7 +6,7 @@
     
     
     
-    <title>归档: 2021 | 博客之家</title>
+    <title>标签: Java面试 | 博客之家</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
@@ -42,7 +42,7 @@
     <meta name="description" content="读万卷书，行万里路">
 <meta property="og:type" content="website">
 <meta property="og:title" content="博客之家">
-<meta property="og:url" content="http://ufopkk.github.io/archives/2021/index.html">
+<meta property="og:url" content="http://ufopkk.github.io/tags/Java%E9%9D%A2%E8%AF%95/index.html">
 <meta property="og:site_name" content="博客之家">
 <meta property="og:description" content="读万卷书，行万里路">
 <meta property="og:locale" content="zh_CN">
@@ -92,7 +92,7 @@
                   </a>
               </li>
             
-              <li class="waves-block waves-effect active">
+              <li class="waves-block waves-effect">
                   <a href="/archives"  >
                     <i class="icon icon-lg icon-archives"></i>
                     <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
@@ -106,7 +106,7 @@
                   </a>
               </li>
             
-              <li class="waves-block waves-effect">
+              <li class="waves-block waves-effect active">
                   <a href="/tags"  >
                     <i class="icon icon-lg icon-tags"></i>
                     <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
@@ -151,7 +151,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">归档</div>
+        <div class="flex-col header-title ellipsis">标签: Java面试</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -168,7 +168,7 @@
         </a>
     </div>
 </header>
-<header class="content-header archives-header">
+<header class="content-header tags-header">
     
     
     <div class="container fade-scale">
@@ -178,7 +178,19 @@
             </h1>
             <h5 class="subtitle">
                 
-                    <h1 class="archivestitle">路漫漫其修远兮</h1>
+                    <h1 id="pagetitle" class="archivestitle"></h1>
+                    <script>
+                        if(location.href.indexOf('about')!=-1){
+                            pagetitle.textContent = '一个坏掉的番茄';
+                        }else if(location.href.indexOf('tags')!=-1||location.href.indexOf('categories')!=-1){
+                            var a=location.href.substring(location.href.length-5,location.href.length-1);
+                            if(a==='tags'){
+                                pagetitle.textContent = '不积小流无以成江海';
+                            }else if(a==='ries'){
+                                pagetitle.textContent = '不积跬步无以至千里';
+                            }
+                        }
+                    </script>
                 
             </h5>
         </div>
@@ -186,25 +198,26 @@
 
 </header>
 
-<div class="container body-wrap fade">
-    
 
-    
+    <div class="container body-wrap fade">
+        
             
-            <h3 class="archive-separator">
-                <i class="icon icon-lg icon-folder-o"></i>&nbsp;&nbsp;
-                2021
-            </h3>
+            
+            <h5 class="tag-tip">
+                <i class="icon icon-tag"></i>
+                关于
+                <span style="color:rgb(100, 100, 100)">Java面试</span>
+                共1篇文章
+            </h5>
             <div class="waterfall">
-    
-
-        <article class="archive-article" onclick="location.href='/posts/f9ba3e83/'">
+            
+                <article class="archive-article" onclick="location.href='/posts/f9ba3e83/'">
     <div class="archive-article-date">
       
       <time class="my-post-time">
         <i class="icon icon-lg icon-file-text-o"></i>
         &nbsp;
-          05-11
+          2021-05-11
       </time>
     </div>
     <div class="archive-article-inner">
@@ -225,123 +238,10 @@
 
     </div>
   </article>
+            
+            </div>
+        
 
-    
-
-        <article class="archive-article" onclick="location.href='/posts/2f6be78b/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          05-09
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/posts/2f6be78b/">latex常用数学符号</a>
-    </h3>
-  
-
-
-
-      <br/>
-      
-    </div>
-  </article>
-
-    
-
-        <article class="archive-article" onclick="location.href='/posts/38872/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          04-27
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/posts/38872/">基于hexo和github搭建博客</a>
-    </h3>
-  
-
-
-
-      <br/>
-      
-    </div>
-  </article>
-
-    
-
-        <article class="archive-article" onclick="location.href='/posts/36630/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          04-27
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/posts/36630/">论文画图</a>
-    </h3>
-  
-
-
-
-      <br/>
-      
-    </div>
-  </article>
-
-    
-
-        <article class="archive-article" onclick="location.href='/posts/16107/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          04-27
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/posts/16107/">Hello World</a>
-    </h3>
-  
-
-
-
-      <br/>
-      
-    </div>
-  </article>
-
-    
-    </div>
-
-    
 </div>
 
         <footer class="footer">
