@@ -192,6 +192,58 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-大数据开发面试题"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/posts/6aface50/">大数据开发面试题</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2021-06-08 10:18:31" datetime="2021-06-08T02:18:31.000Z"  itemprop="datePublished">2021-06-08</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h1 id="bigdata"><a href="#bigdata" class="headerlink" title="bigdata"></a>bigdata</h1><h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>Shuffle指的是将各节点上同一类数据汇聚到某一节点上进行计算，把分布在不同节点的数据按照一定的规则汇聚到同一节点的过程<br>称为Shuffle。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li><p>MapReduce Shuffle和Spark Shuffle的区别？<br>MapReduce Shuffle中Shuffle阶段分为Map端的Shuffle和Reduce端的Shuffle。<br>频繁的磁盘I/O会严重影响效率，因此map阶段的中间结果不会立刻写入磁盘，而是优先存储到map<br>节点的“环形内存缓冲区”，在写入的过程中进行分区，对于每个键值对都增加一个partition属性<br>（默认对key取hash值，然后hash值对reduce的个数取余作为partition的属性值），然后以<br>&lt;partition,key,value&gt;的形式序列化为字节数组写入缓冲区。<br>当写入的数据<br>通过Shuffle操作，相同partition的数据汇聚在一起，各个partition内根据key排序。</p>
+</li>
+<li><p>Spark SQL的连接方式有几种，各自的适用场景是什么？</p>
+</li>
+<li><p>hive数据库的特点是什么？</p>
+</li>
+</ol>
+
+    
+        <div class="post-more-div">
+            <a href="/posts/6aface50/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95/" rel="tag">大数据面试</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Java面试笔记"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -215,29 +267,16 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="产生死锁的四个条件"><a href="#产生死锁的四个条件" class="headerlink" title="产生死锁的四个条件"></a>产生死锁的四个条件</h2><ul>
+        <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="Java多并发编程"><a href="#Java多并发编程" class="headerlink" title="Java多并发编程"></a>Java多并发编程</h2><p>堆、方法区、程序计数器、Java虚拟机栈、本地方法栈<br>线程私有：程序计数器、Java虚拟机栈、本地方法栈<br>线程共有：堆和方法区<br>程序计数器：一块较小的内存空间，可以看作当前线程所执行字节码的行号指示器，字节码解释器工作时通过改变计数器的值选择下一条指令。分支、循环<br>、跳转以及线程恢复等功能都要依赖程序计数器完成。如果线程正在执行Java方法，记录正在执行的虚拟机字节码指令地址；如果执行本地方法<br>，计数器值为Undefined。<br>Java虚拟机栈：用来描述Java方法的内存模型，当有线程创建时就会分配一个栈空间，线程销毁时回收栈空间，栈与线程的生命周期<br>相同。栈中元素用于支持虚拟机进行方法调用，每个方法在执行时会创建一个栈帧用于存储局部变量表、操作栈、动态链接和方法出口<br>方法区用于存储被虚拟机加载的类型信息、常量、静态变量，即时编译器编译的代码缓存等数据。  </p>
+<h2 id="7大原则"><a href="#7大原则" class="headerlink" title="7大原则"></a>7大原则</h2><h2 id="23种模式"><a href="#23种模式" class="headerlink" title="23种模式"></a>23种模式</h2><p>创建型5种、结构型7种、行为型11种<br>创建型： 单例模式、原型模式、简单工厂模式、工厂方法模式、抽象工厂模式<br>结构型： 代理模式、适配器模式、桥接模式、装饰模式、外观模式、享元模式、组合模式  </p>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h2 id="产生死锁的四个条件"><a href="#产生死锁的四个条件" class="headerlink" title="产生死锁的四个条件"></a>产生死锁的四个条件</h2><ul>
 <li>互斥条件：任意时刻某个资源只由一个线程占有</li>
 <li>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放。</li>
 <li>不剥夺条件：线程已获得的资源在未使用完之前不能被其他线程强行剥夺，只有自己使用完毕后才释放资源。</li>
 <li>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。<h2 id="如何预防和避免死锁"><a href="#如何预防和避免死锁" class="headerlink" title="如何预防和避免死锁"></a>如何预防和避免死锁</h2></li>
 </ul>
 <ol>
-<li>破坏请求与保持条件</li>
-</ol>
-<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li>http和https的区别  </li>
-</ol>
-<ul>
-<li>http是超文本传输协议，信息是明文传输，而https是由超文本传输协议和安全通讯层（SSL）构建的可进行加密传输、身份认证的网络协议，比http协议安全  </li>
-<li>http和https使用的是完全不同的连接方式，使用的端口也不同。http使用80端口，https使用443端口。   </li>
-</ul>
-<ol start="2">
-<li>OSI(开放式系统互联通信参考模型),OSI七层参考模型内容<br>物理层–&gt;数据链路层–&gt;网络层–&gt;传输层–&gt;会话层–&gt;表示层–&gt;应用层<br>常见的应用层服务协议包括：HTTP、HTTPS、FTP、POP3、SMTP、DNS等。<br>传输层协议包括：TCP和UDP<br>网络层协议：IP、ICMP、RIP、IGMP<br>数据链路层协议:ARP、RARP、PPP  </li>
-<li>TCP(传输控制协议),UDP(用户数据报协议)<br>TCP五层协议：物理层–&gt;数据链路层–&gt;网络层–&gt;传输层–&gt;应用层</li>
-<li>TCP的三次握手和四次握手</li>
-</ol>
-<h1 id="Java面试易错题"><a href="#Java面试易错题" class="headerlink" title="Java面试易错题"></a>Java面试易错题</h1><h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><p>将类信息加载到内存中，类的初始化</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">P</span> </span>{</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> abc = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">static</span>{</span><br><span class="line">System.out.println(<span class="string">"P is init"</span>);</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">S</span> <span class="keyword">extends</span> <span class="title">P</span> </span>{</span><br><span class="line"><span class="keyword">static</span>{</span><br><span class="line">System.out.println(<span class="string">"S is init"</span>);</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">System.out.println(S.abc);</span><br><span class="line">}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<li>破坏请求与保持条件</li></ol>
     
         <div class="post-more-div">
             <a href="/posts/f9ba3e83/" class="post-more waves-button">
@@ -280,151 +319,19 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="word中集成Aurora"><a href="#word中集成Aurora" class="headerlink" title="word中集成Aurora"></a>word中集成Aurora</h1><ol>
-<li>下载</li>
-</ol>
-<h1 id="公式编辑"><a href="#公式编辑" class="headerlink" title="公式编辑"></a>公式编辑</h1><h2 id="常用符号"><a href="#常用符号" class="headerlink" title="常用符号"></a>常用符号</h2><h2 id="数据库常用符号"><a href="#数据库常用符号" class="headerlink" title="数据库常用符号"></a>数据库常用符号</h2><ul>
-<li>定界符</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">(</td>
-<td align="center">(</td>
-<td align="center">)</td>
-<td align="center">)</td>
-<td align="center">[</td>
-<td align="center">[或\lbrack</td>
-<td align="center">]</td>
-<td align="center">]或\rbrack</td>
-</tr>
-<tr>
-<td align="center">[[</td>
-<td align="center">\llbracket</td>
-<td align="center">]]</td>
-<td align="center">\rrbracket</td>
-<td align="center">{</td>
-<td align="center">{或\lbrace</td>
-<td align="center">}</td>
-<td align="center">}或\rbrace</td>
-</tr>
-</tbody></table>
-<ul>
-<li>大定界符</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">(</td>
-<td align="center">(</td>
-<td align="center">)</td>
-<td align="center">)</td>
-<td align="center">[</td>
-<td align="center">[或\lbrack</td>
-<td align="center">]</td>
-<td align="center">]或\rbrack</td>
-</tr>
-<tr>
-<td align="center">[[</td>
-<td align="center">\llbracket</td>
-<td align="center">]]</td>
-<td align="center">\rrbracket</td>
-<td align="center">{</td>
-<td align="center">{或\lbrace</td>
-<td align="center">}</td>
-<td align="center">}或\rbrace</td>
-</tr>
-</tbody></table>
-<ul>
-<li>AMS 二元关系</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-<th align="center">符号</th>
-<th align="center">Latex命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">⋖</td>
-<td align="center">\lessdot</td>
-<td align="center">⋗</td>
-<td align="center">\gtrdot</td>
-<td align="center">≑</td>
-<td align="center">\doteqdot</td>
-<td align="center">⩽</td>
-<td align="center">\leqslant</td>
-</tr>
-<tr>
-<td align="center">⩾</td>
-<td align="center">\geqslant</td>
-<td align="center">≓</td>
-<td align="center">\risingdotseq</td>
-<td align="center">⪕</td>
-<td align="center">\eqslantless</td>
-<td align="center">⪖</td>
-<td align="center">\eqslantgtr</td>
-</tr>
-<tr>
-<td align="center">≒</td>
-<td align="center">\fallingdotseq</td>
-<td align="center">≦</td>
-<td align="center">\leqq</td>
-<td align="center">≧</td>
-<td align="center">\geqq</td>
-<td align="center">≖</td>
-<td align="center">\eqcirc</td>
-</tr>
-<tr>
-<td align="center">⋘</td>
-<td align="center">\lll 或 \llless</td>
-<td align="center">⋙</td>
-<td align="center">\ggg</td>
-<td align="center">≗</td>
-<td align="center">\circeq</td>
-<td align="center">≲</td>
-<td align="center">\lesssim</td>
-</tr>
-</tbody></table>
-<p>空心中括号</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage{stmaryrd}</span><br><span class="line">$\llbracket{x=0}\rrbracket$</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h1 id="算法编辑"><a href="#算法编辑" class="headerlink" title="算法编辑"></a>算法编辑</h1>
+        <h1 id="word"><a href="#word" class="headerlink" title="word"></a>word</h1><h1 id="公式编辑"><a href="#公式编辑" class="headerlink" title="公式编辑"></a>公式编辑</h1>
     
         <div class="post-more-div">
             <a href="/posts/2f6be78b/" class="post-more waves-button">
                 阅读全文 »
             </a>
         </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/latex%E8%AF%AD%E6%B3%95/" rel="tag">latex语法</a></li></ul>
+
     </div>
     
 </article>
@@ -481,7 +388,7 @@
 <h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/posts/38872/question2.png" alt title>
+                    <img src="/posts/38872/question2.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -489,7 +396,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/posts/38872/config1.png" alt title>
+                    <img src="/posts/38872/config1.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -497,14 +404,14 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/posts/38872/config2.png" alt title>
+                    <img src="/posts/38872/config2.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/posts/38872/config3.png" alt title>
+                    <img src="/posts/38872/config3.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -516,6 +423,12 @@
                 阅读全文 »
             </a>
         </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li></ul>
+
     </div>
     
 </article>
