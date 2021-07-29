@@ -216,15 +216,6 @@
 
     
         <h1 id="bigdata"><a href="#bigdata" class="headerlink" title="bigdata"></a>bigdata</h1><h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>Shuffle指的是将各节点上同一类数据汇聚到某一节点上进行计算，把分布在不同节点的数据按照一定的规则汇聚到同一节点的过程<br>称为Shuffle。</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li><p>MapReduce Shuffle和Spark Shuffle的区别？<br>MapReduce Shuffle中Shuffle阶段分为Map端的Shuffle和Reduce端的Shuffle。<br>频繁的磁盘I/O会严重影响效率，因此map阶段的中间结果不会立刻写入磁盘，而是优先存储到map<br>节点的“环形内存缓冲区”，在写入的过程中进行分区，对于每个键值对都增加一个partition属性<br>（默认对key取hash值，然后hash值对reduce的个数取余作为partition的属性值），然后以<br>&lt;partition,key,value&gt;的形式序列化为字节数组写入缓冲区。<br>当写入的数据<br>通过Shuffle操作，相同partition的数据汇聚在一起，各个partition内根据key排序。</p>
-</li>
-<li><p>Spark SQL的连接方式有几种，各自的适用场景是什么？</p>
-</li>
-<li><p>hive数据库的特点是什么？</p>
-</li>
-</ol>
-
     
         <div class="post-more-div">
             <a href="/posts/6aface50/" class="post-more waves-button">
@@ -267,7 +258,11 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="Java多并发编程"><a href="#Java多并发编程" class="headerlink" title="Java多并发编程"></a>Java多并发编程</h2><p>堆、方法区、程序计数器、Java虚拟机栈、本地方法栈<br>线程私有：程序计数器、Java虚拟机栈、本地方法栈<br>线程共有：堆和方法区<br>程序计数器：一块较小的内存空间，可以看作当前线程所执行字节码的行号指示器，字节码解释器工作时通过改变计数器的值选择下一条指令。分支、循环<br>、跳转以及线程恢复等功能都要依赖程序计数器完成。如果线程正在执行Java方法，记录正在执行的虚拟机字节码指令地址；如果执行本地方法<br>，计数器值为Undefined。<br>Java虚拟机栈：用来描述Java方法的内存模型，当有线程创建时就会分配一个栈空间，线程销毁时回收栈空间，栈与线程的生命周期<br>相同。栈中元素用于支持虚拟机进行方法调用，每个方法在执行时会创建一个栈帧用于存储局部变量表、操作栈、动态链接和方法出口<br>方法区用于存储被虚拟机加载的类型信息、常量、静态变量，即时编译器编译的代码缓存等数据。  </p>
+        <h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><ol>
+<li>ArrayList和LinkedList的区别？<br>ArrayList底层使用的是Object数组，而LinkedList底层使用的是双向链表</li>
+<li>ArrayList和Vector的区别？<br>Vector是线程安全的</li>
+</ol>
+<h2 id="Java多并发编程"><a href="#Java多并发编程" class="headerlink" title="Java多并发编程"></a>Java多并发编程</h2><p>堆、方法区、程序计数器、Java虚拟机栈、本地方法栈<br>线程私有：程序计数器、Java虚拟机栈、本地方法栈<br>线程共有：堆和方法区<br>程序计数器：一块较小的内存空间，可以看作当前线程所执行字节码的行号指示器，字节码解释器工作时通过改变计数器的值选择下一条指令。分支、循环<br>、跳转以及线程恢复等功能都要依赖程序计数器完成。如果线程正在执行Java方法，记录正在执行的虚拟机字节码指令地址；如果执行本地方法<br>，计数器值为Undefined。<br>Java虚拟机栈：用来描述Java方法的内存模型，当有线程创建时就会分配一个栈空间，线程销毁时回收栈空间，栈与线程的生命周期<br>相同。栈中元素用于支持虚拟机进行方法调用，每个方法在执行时会创建一个栈帧用于存储局部变量表、操作栈、动态链接和方法出口<br>方法区用于存储被虚拟机加载的类型信息、常量、静态变量，即时编译器编译的代码缓存等数据。<br>Java虚拟机栈：用来描述Java方法的内存模型，每当有新线程创建时就会分配一个栈空间，线程销毁时回收栈空间，栈与线程拥有相同的生命周期。<br>栈中元素支持JVM进行方法调用，每个方法在执行时会创建一个栈帧，用于存储方法的局部变量表，操作栈，动态链接和方法出口等信息。每个方法从<br>调用到执行完成，就是栈帧从入栈到出栈的过程。</p>
 <h2 id="7大原则"><a href="#7大原则" class="headerlink" title="7大原则"></a>7大原则</h2><h2 id="23种模式"><a href="#23种模式" class="headerlink" title="23种模式"></a>23种模式</h2><p>创建型5种、结构型7种、行为型11种<br>创建型： 单例模式、原型模式、简单工厂模式、工厂方法模式、抽象工厂模式<br>结构型： 代理模式、适配器模式、桥接模式、装饰模式、外观模式、享元模式、组合模式  </p>
 <h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h2 id="产生死锁的四个条件"><a href="#产生死锁的四个条件" class="headerlink" title="产生死锁的四个条件"></a>产生死锁的四个条件</h2><ul>
 <li>互斥条件：任意时刻某个资源只由一个线程占有</li>
