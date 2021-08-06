@@ -47,7 +47,7 @@
 <meta property="og:description" content="java数据结构 ArrayList和LinkedList的区别？ArrayList底层使用的是Object数组，而LinkedList底层使用的是双向链表 ArrayList和Vector的区别？Vector是线程安全的 HashTableHashTable&lt;K,V&gt;也是一种key-value结构，它继承自Dictionary&lt;K,V&gt;，实现了Map&lt;K,V&gt;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-11T01:31:19.000Z">
-<meta property="article:modified_time" content="2021-08-06T02:55:31.037Z">
+<meta property="article:modified_time" content="2021-08-06T02:58:28.087Z">
 <meta property="article:author" content="看秋天的你">
 <meta property="article:tag" content="Java面试">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@
 <li>HashTable<br>HashTable&lt;K,V&gt;也是一种key-value结构，它继承自Dictionary&lt;K,V&gt;，实现了Map&lt;K,V&gt;。<br>单线程转为使用HashMap，多线程使用ConcurrentHashMap</li>
 </ol>
 <ol start="4">
-<li> java自定义注解<br>通过元注解实现<a target="_blank" rel="noopener" href="https://blog.csdn.net/zt15732625878/article/details/100061528">Java实现自定义注解</a><br><font color="#FF0000">  字体改成红色了 </font>   </li>
+<li><font color="#FF0000">java自定义注解</font><br>通过元注解实现<a target="_blank" rel="noopener" href="https://blog.csdn.net/zt15732625878/article/details/100061528">Java实现自定义注解</a></li>
 </ol>
 <h2 id="Java多并发编程"><a href="#Java多并发编程" class="headerlink" title="Java多并发编程"></a>Java多并发编程</h2><p>堆、方法区、程序计数器、Java虚拟机栈、本地方法栈<br>线程私有：程序计数器、Java虚拟机栈、本地方法栈<br>线程共有：堆和方法区<br>程序计数器：一块较小的内存空间，可以看作当前线程所执行字节码的行号指示器，字节码解释器工作时通过改变计数器的值选择下一条指令。分支、循环、跳转以及线程恢复等功能都要依赖程序计数器完成。如果线程正在执行Java方法，记录正在执行的虚拟机字节码指令地址；如果执行本地方法，计数器值为Undefined。<br>Java虚拟机栈：用来描述Java方法的内存模型，当有线程创建时就会分配一个栈空间，线程销毁时回收栈空间，栈与线程的生命周期相同。栈中元素用于支持虚拟机进行方法调用，每个方法在执行时会创建一个栈帧用于存储局部变量表、操作栈、动态链接和方法出口等信息。每个方法从调用到执行完成，就是栈帧从入栈到出栈的过程。<br>方法区用于存储被虚拟机加载的类型信息、常量、静态变量，即时编译器编译的代码缓存等数据。  </p>
 <h3 id="synchronized的底层"><a href="#synchronized的底层" class="headerlink" title="synchronized的底层"></a>synchronized的底层</h3><h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><ol>
@@ -317,7 +317,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2021-08-06T02:55:31.037Z" itemprop="dateUpdated">2021-08-06 10:55:31</time>
+    最后更新：<time datetime="2021-08-06T02:58:28.087Z" itemprop="dateUpdated">2021-08-06 10:58:28</time>
 </span>
 
 

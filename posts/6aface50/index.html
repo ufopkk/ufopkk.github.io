@@ -47,7 +47,7 @@
 <meta property="og:description" content="bigdata基本知识Shuffle指的是将各节点上同一类数据汇聚到某一节点上进行计算，把分布在不同节点的数据按照一定的规则汇聚到同一节点的过程称为Shuffle。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-08T02:18:31.000Z">
-<meta property="article:modified_time" content="2021-06-20T08:39:21.829Z">
+<meta property="article:modified_time" content="2021-08-06T02:58:28.094Z">
 <meta property="article:author" content="看秋天的你">
 <meta property="article:tag" content="大数据面试">
 <meta name="twitter:card" content="summary">
@@ -231,8 +231,6 @@
 <span id="more"></span>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
 <li>MapReduce Shuffle和Spark Shuffle的区别？<br>MapReduce Shuffle中Shuffle阶段分为Map端的Shuffle和Reduce端的Shuffle。<br>频繁的磁盘I/O会严重影响效率，因此map阶段的中间结果不会立刻写入磁盘，而是优先存储到map节点的“环形内存缓冲区”，在写入的过程中进行分区，对于每个键值对都增加一个partition属性<br>（默认对key取hash值，然后hash值对reduce的个数取余作为partition的属性值），然后以&lt;partition,key,value&gt;的形式序列化为字节数组写入缓冲区。<br>当写入的数据量达到阈值后启动溢出写出线程将缓冲区中的数据写入到磁盘的临时文件中，并在写入前根据key进行排序和合并，使得相同partition的数据汇聚在一起，各个partition内根据key排序。</li>
-</ol>
-<ol start="2">
 <li>Spark SQL的连接方式有几种，各自的适用场景是什么？</li>
 <li>hive数据库的特点是什么？</li>
 </ol>
@@ -243,7 +241,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2021-06-20T08:39:21.829Z" itemprop="dateUpdated">2021-06-20 16:39:21</time>
+    最后更新：<time datetime="2021-08-06T02:58:28.094Z" itemprop="dateUpdated">2021-08-06 10:58:28</time>
 </span>
 
 
