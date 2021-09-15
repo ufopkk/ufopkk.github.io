@@ -47,7 +47,7 @@
 <meta property="og:description" content="bigdata基本知识Shuffle指的是将各节点上同一类数据汇聚到某一节点上进行计算，把分布在不同节点的数据按照一定的规则汇聚到同一节点的过程称为Shuffle。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-08T02:18:31.000Z">
-<meta property="article:modified_time" content="2021-08-06T02:58:28.094Z">
+<meta property="article:modified_time" content="2021-09-02T05:45:20.355Z">
 <meta property="article:author" content="看秋天的你">
 <meta property="article:tag" content="大数据面试">
 <meta name="twitter:card" content="summary">
@@ -194,7 +194,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#bigdata"><span class="post-toc-number">1.</span> <span class="post-toc-text">bigdata</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">常见问题</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#bigdata"><span class="post-toc-number">1.</span> <span class="post-toc-text">bigdata</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">基本知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">常见问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E4%BB%93%E5%88%86%E5%B1%82"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">数仓分层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E4%BB%93%E5%BB%BA%E6%A8%A1%E7%BB%B4%E5%BA%A6"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">数仓建模维度</span></a></li></ol></li></ol>
         </nav>
     </aside>
    
@@ -224,16 +224,56 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">1</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">7</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="bigdata"><a href="#bigdata" class="headerlink" title="bigdata"></a>bigdata</h1><h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>Shuffle指的是将各节点上同一类数据汇聚到某一节点上进行计算，把分布在不同节点的数据按照一定的规则汇聚到同一节点的过程<br>称为Shuffle。</p>
 <span id="more"></span>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
-<li>MapReduce Shuffle和Spark Shuffle的区别？<br>MapReduce Shuffle中Shuffle阶段分为Map端的Shuffle和Reduce端的Shuffle。<br>频繁的磁盘I/O会严重影响效率，因此map阶段的中间结果不会立刻写入磁盘，而是优先存储到map节点的“环形内存缓冲区”，在写入的过程中进行分区，对于每个键值对都增加一个partition属性<br>（默认对key取hash值，然后hash值对reduce的个数取余作为partition的属性值），然后以&lt;partition,key,value&gt;的形式序列化为字节数组写入缓冲区。<br>当写入的数据量达到阈值后启动溢出写出线程将缓冲区中的数据写入到磁盘的临时文件中，并在写入前根据key进行排序和合并，使得相同partition的数据汇聚在一起，各个partition内根据key排序。</li>
-<li>Spark SQL的连接方式有几种，各自的适用场景是什么？</li>
-<li>hive数据库的特点是什么？</li>
+<li>MapReduce Shuffle和Spark Shuffle的区别？<br>MapReduce Shuffle中Shuffle阶段分为Map端的Shuffle和Reduce端的Shuffle。<br>频繁的磁盘I/O会严重影响效率，因此map阶段的中间结果不会立刻写入磁盘，而是优先存储到map节点的“环形内存缓冲区”，在写入的过程中进行分区，对于每个键值对都增加一个partition属性<br>（默认对key取hash值，然后hash值对reduce的个数取余作为partition的属性值），然后以&lt;partition,key,value&gt;的形式序列化为字节数组写入缓冲区。<br>当写入的数据量达到阈值后启动溢出写出线程将缓冲区中的数据写入到磁盘的临时文件中，并在写入前根据key进行排序和合并，使得相同partition的数据汇聚在一起，各个partition内根据key排序。<br>Spark shuffle<br>在DAG构建阶段以shuffle为界，划分stage,上游stage做map task，每一个map task将自己处理的数据按key进行分区，将相同key的数据写入同一个磁盘文件。<br>shuffle write阶段，map task为下游stage的每个task都创建了一个磁盘文件<br>shuffle read阶段<br>下游stage做reduce task,每一个reduce task通过网络拉取上游stage中所有map task的指定分区结果数据。</li>
+<li>Spark SQL的连接方式有几种，各自的适用场景是什么？<br>Broadcast Hash Join：适合一张很小的表和一张大表进行Join；<br>hash join<br>Shuffle Hash Join：适合一张小表(比上一个大一点)和一张大表进行Join；<br>Sort Merge Join：适合两张大表进行Join；</li>
+<li>hive数据库的特点是什么？<br><a target="_blank" rel="noopener" href="http://www.saoniuhuo.com/article/detail-682.html">hive的特点</a><br>Hive是由Facebook开源的用于解决海量结构化日志的数据统计工具。可以将结构化的数据文件映射为一张表，并提供类SQL查询功能。<br>hive以HDFS为基本的文件存储，以MapReduce为默认执行引擎。<br>优点：<br>  1) 操作接口采用类SQL语法(HQL)，提供快速开发的能力（简单、容易上手）。<br>  2) 避免了用户去写MapReduce程序，减少开发人员的学习成本。<br>  3) Hive的执行延迟比较高，因此Hive常用于数据分析，对实时性要求不高的场合。<br>  4) Hive优势在于处理大数据，对于处理小数据没有优势，因为Hive的执行延迟比较高。<br>  5) Hive支持用户自定义函数，用户可以根据自己的需求来实现自己的函数。<br>缺点：<br>  1）Hive的HQL表达能力有限<br>    （1）迭代式算法无法表达<br>    （2）数据挖掘方面不擅长<br>  2）Hive的效率比较低<br>    （1）Hive自动生成的MapReduce作业，通常情况下不够智能化<br>    （2）Hive调优比较困难，粒度较粗<br>hdfs的架构<br>HDFS采用master/slave架构，这种架构主要由四个部分组成，分别为HDFS Client、NameNode、DataNode和Secondary NameNode。<br>一个HDFS集群是由一个NameNode和一定数目的DataNode组成的。<br>NameNode维护整个hdfs文件系统的元数据信息（目录）<br>负责确定指定的文件块到DataNode节点的映射关系<br>管理DataNode节点的状态报告，包括Datanode结点的健康状态报告和其所在结点上数据块状态报告，以便能够及时处理失效的数据</li>
 </ol>
+<p>presto和hive的区别<br>presto是一个facebook开源的分布式SQL查询引擎，适用于交互式分析查询。其采用典型的master-slave模型，<br>coordinator(master)负责meta管理,worker管理，query的解析和调度，worker则负责计算和读写。</p>
+<ol>
+<li>hive将一个查询转化为多个MR任务，然后一个接一个执行。执行的中间结果通过对磁盘的读写来同步。<br>Presto没有使用MapReduce，它是通过一个定制的查询和执行引擎来完成的，它的所有的查询处理是在内存中。<br>presto由于是基于内存的，而hive是在磁盘上读写的，因此presto比hive快很多，但是由于是基于内存的当多张大表关联操作时易引起内存溢出错误</li>
+</ol>
+<p>MR和Spark的区别</p>
+<ul>
+<li>MR是基于进程，spark是基于线程</li>
+<li>Spark把运算中数据放到内存中，迭代计算效率会更高；MR的中间结果需要落地磁盘，所以大量的磁盘IO操作，会影响性能</li>
+<li>MR的每一个task都是一个进程，当task完成时，进程也会结束，Spark的多个task跑在同一个进程上，这个进程会伴随spark应用程序的整个生命周期，即使没有作业进行，进程也是存在的</li>
+<li>spark容错性高，它通过弹性分布式数据集RDD来实现高效容错；MR的话容错可能只能重新计算了，成本较高。</li>
+<li>MR运行在yarn上，spark有local、Standalone、Yarn、Messos四种部署模式</li>
+<li>spark通用性更强，spark提供了transformation和action这两大类多功能API，另外还有流式处理SparkStreaming模块，机器学习、图计算；MR只提供Map和Reduce方法，没有其他模块，MR其实是有机器学习的基本上没有人使用。</li>
+<li>spark框架和生态更为复杂，MR框架及其生态相对较为简单，对性能的要求也相对较弱，但是运行较为稳定，适合长期后台运行</li>
+</ul>
+<p>Hbase和Hive的区别<br>Hbase和Hive在大数据架构中处在不同位置，Hbase主要解决实时数据查询问题，Hive主要解决数据处理和计算问题，一般是配合使用。</p>
+<ol>
+<li>Hbase: hadoop database, 基于hadoop的数据库，适用于海量明细数据的随机实时查询。hive本质是一个数据仓库，<br>适用于离线的批量数据计算</li>
+</ol>
+<h2 id="数仓分层"><a href="#数仓分层" class="headerlink" title="数仓分层"></a>数仓分层</h2><ol>
+<li>OSD层（原始数据层），存放原始的数据</li>
+<li>DWD（明细数据层）</li>
+<li>服务数据层</li>
+<li>数据应用层</li>
+</ol>
+<p>spark算子<br>transformation算子：map、flatMap、filter、groupByKey、reduceByKey、sortByKey<br>action算子：<br>reduce、<br>collect、<br>count()、<br>first()、take、aggregate、foreach、saveAsTextFile</p>
+<p>flink的窗口时间属性TimeCharacteristic分为三种：ProcessingTime，IngestionTime，EventTime。<br>处理时间：处理流的operator在执行时，所属机器上的本地时间。Processing-time 窗口包含所有在一个时间周期内到达window operator 的events，以本地机器时间衡量。<br>事件时间：事件时间是一个event实际发生的时间，是实际应用最常见的时间语义<br>摄入时间：存在多个Source Operator的情况下，每个 Source Operator可以使用自己本地系统时钟指派 Ingestion Time。后续基于时间相关的各种操作，都会使用数据记录中的 Ingestion Time。</p>
+<p>hdfs的缺点：</p>
+<ol>
+<li>不支持低延迟数据访问</li>
+<li>不适合大量小文件存储</li>
+<li>不支持并发写入，一个文件只能有一个写入者</li>
+<li>不支持在文件的任意位置进行修改。写操作总是将数据添加在文件的末尾（append）</li>
+</ol>
+<p>Scala是一种多范式的编程语言，其设计的初衷是要集成面向对象编程和函数式编程的各种特性。Scala运行于Java平台（Java虚拟机），并兼容现有的Java程序。<br>Scala语言表达能力强，一行代码抵得上Java多行，开发速度快；Scala是静态编译的，所以和JRuby,Groovy比起来速度会快很多</p>
+<h2 id="数仓建模维度"><a href="#数仓建模维度" class="headerlink" title="数仓建模维度"></a>数仓建模维度</h2><p>维度表：</p>
+<ul>
+<li>星型模型：一张事实表，周围散列多张维度表，维度表都是一级，维度表和事实表之间直接关联。</li>
+<li>雪花模型：维度表有多个层级，并且间接和事实表相连。</li>
+<li>星座模型：星座模式是星型模式延伸而来，星型模式是基于一张事实表的，而星座模式是基于多张事实表的，而且共享维度信息。</li>
+</ul>
 
         </div>
 
@@ -241,7 +281,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2021-08-06T02:58:28.094Z" itemprop="dateUpdated">2021-08-06 10:58:28</time>
+    最后更新：<time datetime="2021-09-02T05:45:20.355Z" itemprop="dateUpdated">2021-09-02 13:45:20</time>
 </span>
 
 
