@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>博客之家</title>
+  <title>自家博客</title>
   
   
   <link href="http://ufopkk.github.io/atom.xml" rel="self"/>
   
   <link href="http://ufopkk.github.io/"/>
-  <updated>2021-09-02T05:45:20.355Z</updated>
+  <updated>2022-11-08T07:50:16.582Z</updated>
   <id>http://ufopkk.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论文Python画图</title>
+    <link href="http://ufopkk.github.io/posts/36630/"/>
+    <id>http://ufopkk.github.io/posts/36630/</id>
+    <published>2022-11-08T09:46:08.000Z</published>
+    <updated>2022-11-08T07:50:16.582Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="matplotlib绘制箱形图"><a href="#matplotlib绘制箱形图" class="headerlink" title="matplotlib绘制箱形图"></a>matplotlib绘制箱形图</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;matplotlib绘制箱形图&quot;&gt;&lt;a href=&quot;#matplotlib绘制箱形图&quot; class=&quot;headerlink&quot; title=&quot;matplotlib绘制箱形图&quot;&gt;&lt;/a&gt;matplotlib绘制箱形图&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>大数据开发面试题</title>
@@ -34,6 +54,36 @@
     
     
     <category term="大数据面试" scheme="http://ufopkk.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金融小知识随记</title>
+    <link href="http://ufopkk.github.io/posts/0/"/>
+    <id>http://ufopkk.github.io/posts/0/</id>
+    <published>2021-06-08T02:18:31.000Z</published>
+    <updated>2022-11-08T08:07:02.628Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul><li>借记卡</li></ul><ul><li>信用卡</li></ul><h1 id="公式编辑"><a href="#公式编辑" class="headerlink" title="公式编辑"></a>公式编辑</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;借记卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;信用卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;公式编辑&quot;&gt;&lt;a </summary>
+      
+    
+    
+    
+    <category term="工作笔记" scheme="http://ufopkk.github.io/categories/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="http://ufopkk.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -121,19 +171,6 @@
     
     
     <category term="技术分享" scheme="http://ufopkk.github.io/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>论文画图</title>
-    <link href="http://ufopkk.github.io/posts/36630/"/>
-    <id>http://ufopkk.github.io/posts/36630/</id>
-    <published>2021-04-27T09:46:08.000Z</published>
-    <updated>2021-04-27T09:49:09.130Z</updated>
-    
-    
-    
-    
     
   </entry>
   
